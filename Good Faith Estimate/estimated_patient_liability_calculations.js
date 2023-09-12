@@ -130,7 +130,7 @@ function allCalculations(lineAmounts, formContext) {
         patientResponsibility = totalAllowedAmount
     }
     else if (deductible < (totalAllowedAmount - actualCopay)) {
-        patientResponsibility = deductible + (totalAllowedAmount - deductible) * assignOne(coinsurance)
+        patientResponsibility = deductible + (totalAllowedAmount - actualCopay - deductible) * assignOne(coinsurance)
     }
     console.log(" - Patient Responsibility: " + patientResponsibility)
 
